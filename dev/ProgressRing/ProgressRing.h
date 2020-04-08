@@ -42,6 +42,8 @@ private:
     void UpdateRing();
     double GetStrokeThickness();
 
+    double m_oldValue{ 0 };
+
     tracker_ref<winrt::Grid> m_layoutRoot{ this };
     tracker_ref<winrt::Path> m_outlinePath{ this };
     tracker_ref<winrt::PathFigure> m_outlineFigure{ this };
