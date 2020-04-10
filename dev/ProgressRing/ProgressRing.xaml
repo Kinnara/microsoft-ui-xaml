@@ -20,15 +20,28 @@
                     <Grid x:Name="LayoutRoot" Background="Transparent">
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition From="Active" To="Inactive">
+                                        
+                                    </VisualTransition>
+                                </VisualStateGroup.Transitions>
                                 <VisualState x:Name="Active">
-                                    <VisualState.Setters>
-                                        <Setter Target="IndeterminateAnimatedVisualPlayer.Opacity" Value="1"/>
-                                    </VisualState.Setters>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="IndeterminateAnimatedVisualPlayer"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="1"
+                                            Duration="0:0:0.15" />
+                                    </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Inactive">
-                                    <VisualState.Setters>
-                                        <Setter Target="IndeterminateAnimatedVisualPlayer.Opacity" Value="0"/>
-                                    </VisualState.Setters>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="IndeterminateAnimatedVisualPlayer"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0"
+                                            Duration="0:0:0.15" />
+                                    </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
